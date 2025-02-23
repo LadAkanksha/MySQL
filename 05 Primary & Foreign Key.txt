@@ -1,0 +1,57 @@
+
+**********************	PRIMARY KEY	**********************
+
+	PRIMARY KEY is used for ->
+		1.Primary key always has unique data.
+		2.A primary key cannot have null value.
+		3.A table can contain only one primary key constraint.
+		
+	******************************************************************
+	(when create a new table)
+	
+			CREATE TABLE employee 
+			(
+				Id int NOT NULL AUTO_INCREMENT, 
+				Name varchar(50)NOT NULL,
+				Age int NOT NULL,
+				Gender char NOT NULL,
+				City varchar(20)NOT NULL,
+				Department varchar(20) NOT NULL,
+				PRIMARY KEY(ID)
+			);
+			
+					OR
+					
+	(when table is already exist)
+	
+			ALTER TABLE emplyee
+			ADD PRIMARY KEY(Id);
+	******************************************************************
+	
+	
+**********************	FOREIGN KEY	**********************
+
+	FOREIGN KEY is used for ->
+		1.	A foreign key is used to link two tables together.
+		2.	A FOREIGN KEY in one table used to point PRIMARY KEY in another table.
+
+	******************************************************************
+	(when create a new table)
+	
+			CREATE TABLE employee 
+			(
+				Id int NOT NULL AUTO_INCREMENT, 
+				Name varchar(50)NOT NULL,
+				Age int NOT NULL,
+				Gender char NOT NULL,
+				Department varchar(20) NOT NULL,
+				PRIMARY KEY(ID),
+				FOREIGN KEY(CId) REFERENCES City(CId)
+			);
+			
+					OR
+	(when table is already exist)
+	
+			ALTER TABLE emplyee
+			ADD FOREIGN KEY(City) REFERENCES City(CId);
+	******************************************************************
