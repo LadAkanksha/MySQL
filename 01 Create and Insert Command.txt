@@ -1,0 +1,62 @@
+
+
+**********************************************	MySQL Create and Insert Command	**********************************************
+
+//////////////////////////////////////////////////////////////////////////////
+//																		   	//
+//--------------	TABLE creation command syntax	----------------	   	//
+//																	       	//	
+//		SYNTAX ->	CREATE TABLE table_Name(COL1 DATATYPE(SIZE) CONTRAINTS,	//
+//											COL2 DATATYPE(SIZE) CONTRAINTS,	//
+//											COL3 DATATYPE(SIZE) CONTRAINTS,	//
+//											.							   	//
+//											.							   	//
+//											.);							   	//
+//																	       	//					
+//////////////////////////////////////////////////////////////////////////////	
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//																										//
+//-------------------------------	INSERT 1 data into table command	--------------------------------//
+//																										//	
+//	1)	SYNTAX ->	INSERT INTO table_name (col1 , col2 , col3 ,....) VALUES(val1 , val2 , val3 , ....);//
+//	2)	SYNTAX -> 	INSERT INTO table_name values(val1 , val2 , val3 , ....)							//	
+//					(sequence of values is same as columns in that table)								//
+//																										//	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//																						//
+//------------------	INSERT multiple data into table command syntax	---------------	//
+//																						//	
+//			SYNTAX ->	INSERT INTO table_name VALUES									//
+//											(val1 , val2 , val3 , .....),				//
+//											(val1 , val2 , val3 , .....),				//
+//											(val1 , val2 , val3 , .....),				//
+//											(val1 , val2 , val3 , .....);				//
+//////////////////////////////////////////////////////////////////////////////////////////
+	
+											
+*******************************************************************************************************
+		create table stud_details(
+									Id INT,
+									Name VARCHAR(50),
+									Age INT,
+									DOB DATE,
+									MobNo DECIMAL(10,0),
+									Gender CHAR(1)
+								);
+		insert into stud_details values(101,"Atharv",18,"2008-04-16",9892895943,'M');
+		select * from stud_details;
+		insert into stud_details values(102,"Akanksha",22,"2003-12-07",9892895943,'F');
+		insert into stud_details (Id , Name , Age , DOB , MobNo , Gender)
+		values
+		(103,"Shashikant", 21 ,"2003-07-05", 9373131657,'M'),
+		(104,"Rohan", 22 ,"2007-05-24" , 8563245687 , 'M'),
+		(105,"Sushma", 21 ,"2004-05-05" , 9594045356 , 'F'),
+		(106,"Ankita", 21 ,"2004-02-08" , 8275768965 , 'F'),
+		(107,"Sakshi", 21 ,"2004-07-03" , 85962357 , 'F');
+		select * from stud_details;
+
+*********************************************************************************************************	
