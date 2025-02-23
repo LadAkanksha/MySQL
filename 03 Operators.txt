@@ -1,0 +1,124 @@
+
+
+********************	Operator	*************************
+
+	1) 	IN 
+			-IN keyword is to select data of the values mentioned in that braces ().
+			-We can give atleast one or more values within().
+			-Write the value as per their datatype
+			
+			
+		SYNTAX ->  
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name IN(val2 , val2,...); 	
+					
+		******************************************************************************
+					select name,age,city from Data where age in(20,22);
+					select name,age,city from Data where age in(16);
+					select * from Data where gender in("M");
+					select * from Data where city in("Karad","Patan");
+		******************************************************************************
+		
+		
+					
+	2) 	NOT IN 
+			-NOT IN keyword is to select data except from the values mention in that braces ().
+			-We can give atleast one or more values within().
+			-Write the value as per their datatype
+			
+			
+		SYNTAX ->  
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name NOT IN(val2 , val2,...); 	
+					
+					
+		******************************************************************************
+					select name,age,city from Data where age not in(20,22);
+					select name,age,city from Data where age not in(16);
+					select * from Data where gender not in("M");
+					select * from Data where city in("Karad","Patan");
+		******************************************************************************
+		
+	3)	BETWEEN
+			- BETWEEN keyword is use to select data between the values 
+			- We can give two values.
+			- Write the value as per their datatype
+			- Values are inclusive
+			
+		SYNTAX ->
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name BETWEEN val1 AND val2;
+					
+		******************************************************************************
+					select * from Data where id between 100 and 200;
+					select name , city from Data where name
+					 between "Atharv" and "Pratham";				//In this query Finds data based on initials of values not on full name mentioned
+					select name , city from Data where name between "K" and "S";
+		******************************************************************************
+					
+	3)	NOT BETWEEN
+		- NOT BETWEEN keyword is use to select data which is not between the values.
+		- We can give two values.
+		- Write the value as per their datatype
+		- Values are inclusive
+		
+		SYNTAX ->
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name NOT BETWEEN val1 AND val2;
+					
+		******************************************************************************
+					select * from Data where id not between 100 and 200;
+					select name , city from Data where name
+					 not between "Atharv" and "Pratham";				//In this query Finds data based on initials of values not on full name mentioned
+					select name , city from Data where name not between "K" and "S";
+		******************************************************************************
+		
+	4) LIKE 
+			- Use to select data which matches the LIKE operator pattern
+			- Two WildCard Characters are used :
+				
+				I)Percentage Sign (%) - Represents zero , one or multiple characters
+				
+				II)Underscore Sign (_) - Represents a single characters
+				
+		SYNTAX ->
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name LIKE "pattern";
+					
+		*****************************************************************************
+					SELECT name FROM Data WHERE name LIKE 'P%';
+					SELECT name FROM Data WHERE BINARY name LIKE 'p%';
+					SELECT name FROM Data WHERE name LIKE '%a';
+					SELECT name FROM Data WHERE name LIKE '%ki%';
+					SELECT name FROM Data WHERE name LIKE 's%a';
+					SELECT name FROM Data WHERE name LIKE '_r%';
+					SELECT name FROM Data WHERE name LIKE '__k%';
+					SELECT name FROM Data WHERE name LIKE '_ik';
+					SELECT * FROM Data WHERE phone LIKE '9%7';
+					SELECT name FROM Data WHERE name LIKE 'P%' OR name LIKE 's%';
+					
+		*****************************************************************************
+					
+	5) NOT LIKE 
+			- Use to select data which matches the LIKE operator pattern
+			- Two WildCard Characters are used :
+				
+				I)Percentage Sign (%) - Represents zero , one or multiple characters
+				
+				II)Underscore Sign (_) - Represents a single characters
+				
+		SYNTAX ->
+					SELECT col1 , col2 ,.... FROM table_name
+					WHERE  column_name NOT LIKE "pattern";
+					
+		*****************************************************************************
+					SELECT name FROM Data WHERE name NOT LIKE 'P%';
+					SELECT name FROM Data WHERE name NOT LIKE '%a';
+					SELECT name FROM Data WHERE name NOT LIKE '%ki%';
+					SELECT name FROM Data WHERE name NOT LIKE 's%a';
+					SELECT name FROM Data WHERE name NOT LIKE '_r%';
+					SELECT name FROM Data WHERE name NOT LIKE '__k%';
+					SELECT name FROM Data WHERE name NOT LIKE '_ik';
+					SELECT * FROM Data WHERE phone NOT LIKE '9%7';
+					
+		*****************************************************************************
