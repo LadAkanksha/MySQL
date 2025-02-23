@@ -1,0 +1,47 @@
+
+
+***************************	MySQL Constraints	****************************************
+
+	1)	NOT NULL ->
+				
+				
+	2)	UNIQUE	->
+	
+	
+	3)	CHECK	->
+	
+	
+	4)	DEFAULT	->
+	
+	
+	5)	PRIMARY KEY	->
+	
+	
+	6)	FOREIGN KEY->
+	
+
+
+******************************************************************************************
+
+
+******************************************************************************************
+		use student;
+		CREATE TABLE Data(
+			id INT NOT NULL UNIQUE,
+			name VARCHAR(50) NOT NULL,
+			age INT CHECK(age >= 18),
+			gender CHAR NOT NULL,
+			phone DECIMAL(10,0) NOT NULL,
+			city NVARCHAR(50) NOT NULL DEFAULT 'Karad'  
+		);
+		insert into Data (id , name , age , gender , phone , city)
+				values
+				(103,"Shashikant", 21 ,"M", 9373131657,"Karad"),
+				(104,"Rohan", 20 ,"M" , 8563245687 , "Chiplun"),
+				(105,"Sushma", 21 ,"F" , 9594045356 ,"Koyna"),
+				(106,"Ankita", 21 ,"F" , 8275768965 , "Patan"),
+				(107,"Sakshi", 21 ,"F" , 85962357 , "Pune");
+		select * from Data;
+		insert into Data(id , name , age , gender , phone) values(108 , "Nikita",22,"F",9895623587);
+		select * from Data;
+******************************************************************************************
