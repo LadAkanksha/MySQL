@@ -1,0 +1,70 @@
+
+
+***************************************	Select & Where Clause	***************************************	
+
+		-------------	select Command :	-----------------
+
+			SYNTAX:
+					SELECT col1,col2,col3,.... FROM table_name;
+						
+***********************************************************************************	
+
+		select * from Data;
+		select name , age , gender from data;
+		select name as Person , age as Age , city as Address from Data;
+		select name as "Student Name" , age as Age , city as Address from Data;						
+
+***********************************************************************************
+
+
+
+		---------	Select with Where Clause 	------------
+		
+			SYNTAX :
+					SELECT col1,col2,col3,..... FROM table_name
+					WHERE condition; 	
+					
+					
+Opeartor used within where clause :-
+
+			OPERATOR				DESCRIPTION
+				
+				=			-		Eqaul
+				
+				>			-		Greater than
+	
+				<			-		Less than
+
+				>=			-		Greater than or Equal
+
+				<=			-		Less than or Equal
+
+			  <> OR !=		-		Not equal
+
+			  BETWEEN		-		Between specified range
+
+		       LIKE			-		Search for pattern
+
+			    IN			-		Specify multiple possible values for a column
+				
+				
+***********************************************************************************
+
+		select * from Data where gender = "F";
+		select * from Data where age > 22;
+		select * from Data where age <= 21;
+		select * from Data where id <105;
+		select * from Data where city = "Karad";
+		select * from Data where gender <> "F";
+		select * from Data where city != "Karad";
+		
+		
+		select * from Data where age >= 20 and age <25;
+		select Id , name from Data where age > 20 and gender = "M" and city <> "Karad";
+		select * from Data where age > 20 and gender = "M" and city <> "Karad";
+		select name from Data where age > 20 or gender = "M" or city <> "Karad";
+		select * from Data where city = "Chiplun" or city = "Mumbai" and gender = "M";
+		select * from Data where Not city = "Chiplun" or city = "Karad";
+		select * from Data where Not id < 200;
+		
+***********************************************************************************
