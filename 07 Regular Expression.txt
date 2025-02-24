@@ -1,0 +1,32 @@
+
+*************	 Regular Expression	***************
+
+
+	SIGN			PATTERN			DESCRIPTION
+	
+	  ^			^ra			Beginning of string
+	  $			an$			End of string
+	[...]			[rms]			Any character listed between the []
+	^[...]			^[rms]			Begins with any character listed between the []
+	[a-z]			[a-h]e			Matches within range
+	p1|p2|p3	     tom|dick|harry		Matches any if the pattern p1, p2, p3
+		
+		
+      SYNTAX ->
+		SELECT col1 , col2 , col3 FROM table_Name
+		WHERE col_name REGEXP pattern;
+		
+**********************************************************
+		
+	SELECT * FROM Data WHERE name REGEXP 'an';
+	SELECT * FROM Data WHERE name REGEXP '^pra';
+	SELECT * FROM Data WHERE name REGEXP 'ta$';
+	SELECT * FROM Data WHERE name REGEXP '[aps]';
+	SELECT * FROM Data WHERE name REGEXP '^[aps]';
+	SELECT * FROM Data WHERE name REGEXP '[at]$';
+	SELECT * FROM Data WHERE name REGEXP '[A-K]a';
+	SELECT * FROM Data WHERE name REGEXP '^[A-P]r';
+	SELECT * FROM Data WHERE name REGEXP '^at|ki|a$';
+				
+**********************************************************
+						  
