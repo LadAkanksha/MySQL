@@ -1,0 +1,11 @@
+
+************************ Distinct ************************
+
+	Distinct is used to fetch the DISTINCT(Unique) Data.
+
+*************************************************************
+
+		SELECT DISTINCT city FROM Data;
+		SELECT DISTINCT age FROM Data;
+
+*************************************************************
