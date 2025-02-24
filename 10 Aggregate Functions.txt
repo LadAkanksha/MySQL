@@ -1,0 +1,85 @@
+
+********************  Aggregate Function  *********************
+*								*
+*	SYNTAX ->						*
+*			SELECT function_name(col_name)		*
+*			FROM(table_name)			*
+*			WHERE condition;			*
+*								*
+*****************************************************************				
+	
+	1)COUNT() - Used to count how many rows are found out on that condition.
+	
+		SYNTAX	->
+			SELECT COUNT(col_name)
+			FROM(table_name)
+			WHERE condition;
+
+*************************************************************************************************
+
+	 	SELECT COUNT(*) FROM Data;
+		SELECT COUNT(name) FROM Data;
+		SELECT COUNT(DISTINCT city) AS CITY FROM Data;
+		SELECT COUNT(DISTINCT city) FROM Data WHERE city <> "Patan";
+
+*************************************************************************************************
+	
+	2)MAX() - Used to find out maximum from particular column based on condition
+
+		SYNTAX	->
+			SELECT MAX(col_name)
+			FROM(table_name)
+			WHERE condition;
+
+*************************************************************************************************
+
+		SELECT MAX(age) FROM Data;
+		SELECT MAX(ID) AS "Greater ID" FROM Data;
+		SELECT MAX(city) FROM Data;				///	Returns city of last row 
+		SELECT MAX(name) FROM Data;				///	Returns name of last row
+
+*************************************************************************************************							
+	
+	3) MIN() - Used to find out maximum from particular column based on condition	
+	
+		SYNTAX	->
+			SELECT MIN(col_name)
+			FROM(table_name)
+			WHERE condition;
+							
+*************************************************************************************************
+
+		SELECT MIN(age) FROM Data;
+		SELECT MIN(ID) AS "Greater ID" FROM Data;
+		SELECT MIN(city) FROM Data;				///	Returns city of last row	
+		SELECT MIN(name) FROM Data;				///	Returns name of last row
+
+*************************************************************************************************							
+	
+	4) SUM() -  Used to calculate sum of values in particular column based on condition.
+	
+		SYNTAX	->
+			SELECT SUM(col_name)
+			FROM(table_name)
+			WHERE condition;
+							
+*************************************************************************************************
+		SELECT SUM(age)AS "TOTAL OF AGE" FROM Data;
+		SELECT SUM(ID) AS "TOTAL ID" FROM Data;
+		SELECT SUM(city) FROM Data;				///	Return 0,Bcz sum of string is not possible
+		SELECT SUM(name) FROM Data;				///	Return 0,Bcz sum of string is not possible
+*************************************************************************************************							
+	
+	5) AVG() - Used to calculate average of particular column.
+	
+		SYNTAX	->
+			SELECT AVG(col_name)
+			FROM(table_name)
+			WHERE condition;
+
+*************************************************************************************************
+		SELECT AVG(age)AS "AVERAGE OF AGE" FROM Data;
+		SELECT AVG(ID) AS "AVERAGE ID" FROM Data;
+		SELECT AVG(city) FROM Data;				///	Return 0,Bcz sum of string is not possible
+		SELECT AVG(name) FROM Data;				///	Return 0,Bcz sum of string is not possible
+*************************************************************************************************							
