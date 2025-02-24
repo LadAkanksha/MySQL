@@ -1,0 +1,20 @@
+
+********************	Order By	********************
+
+	This clause used to order the data in Ascending / Descending order.
+	
+	SYNTAX -> 
+		SELECT col1,col2,col3... FROM table_Name 
+		WHERE condition ORDER BY col1, col2,...;
+			
+************************************************************************************
+	
+	SELECT name as "Ordered Name" FROM Data ORDER BY name;
+	SELECT * FROM Data WHERE city = "karad" OR city = "patan" ORDER BY city,name;
+	SELECT * FROM Data ORDER BY name DESC;
+	SELECT * FROM Data WHERE name REGEXP '^[ansp]' ORDER BY name DESC;
+	SELECT * FROM Data ORDER BY age;
+		
+************************************************************************************
+		
+		
