@@ -1,0 +1,26 @@
+
+
+*************************	CROSS JOIN	**************************
+
+- The CROSS JOIN keyword returns all records from both tables (table1  and table2).
+- CROSS JOIN can potentially return very large result sets.
+- If you add WHERE clause the CROSS JOIN will produce same result as INNER JOIN.
+		
+		
+	SYNTAX	->
+			SELECT column(s)
+			FROM table1 
+			CROSS JOIN table2;
+				
+				or
+						
+			SELECT column(s)
+			FROM table1 , table2;
+				
+***************************************************************************************
+	
+		SELECT * FROM student_details CROSS JOIN Course_Details;
+		SELECT * FROM student_details , Course_Details;
+				
+***************************************************************************************
+				
