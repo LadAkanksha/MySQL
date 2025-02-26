@@ -1,0 +1,44 @@
+
+********************************	LEFT JOIN	*******************************
+
+	- The LEFT JOIN keyword returns all records from the left table(table1) and the matching
+ 	  records from the right table(table2).
+	
+	SYNTAX	->
+			SELECT column(s)
+			FROM table_name1
+			LEFT JOIN table_name2
+			ON table_name1.column = table_name2.column;
+				
+***************************************************************************************
+		SELECT * FROM student_details 
+		LEFT JOIN Course_Details
+		ON student_details.Course = Course_Details.Id;
+						
+		SELECT S.NAME , s.Age , s.Gender , s.City , c.Course_Name  
+		FROM student_details s LEFT JOIN Course_Details c 
+		ON s.Course = c.Id;
+***************************************************************************************
+
+
+				
+********************************	RIGHT JOIN	*******************************
+
+	- The RIGHT JOIN keyword returns all records from the right table(table2) and
+	  the matching records from the left table(table1).
+	
+	SYNTAX	->
+			SELECT column(s)
+			FROM table_name1
+			RIGHT JOIN table_name2
+			ON table_name1.column = table_name2.column;
+	
+***************************************************************************************
+		SELECT * FROM student_details 
+		RIGHT JOIN Course_Details
+		ON student_details.Course = Course_Details.Id;
+						
+		SELECT S.NAME , s.Age , s.Gender , s.City , c.Course_Name  
+		FROM student_details s RIGHT JOIN Course_Details c 
+		ON s.Course = c.Id;
+***************************************************************************************
