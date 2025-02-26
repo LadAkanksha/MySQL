@@ -1,0 +1,31 @@
+
+***********************		SUBQUERY or NESTED QUERY	***************************
+
+	-	A subquery is embedded inside another query and acts as input /output for the query.
+	-	SUBQUERY also called INNER QUERY used in various complex operations.
+		
+			SYNTAX 	->
+					SELECT column(s)
+					FROM table1
+					WHERE column = (SELECT column(s) FROM table2 WHERE condition);
+						
+********************************************************************************************************
+	
+			SELECT name FROM Student_Details 
+			WHERE course = (SELECT id FROM Course_Details WHERE Course_Name = "C#");
+			
+			SELECT name FROM Student_Details 
+			WHERE course IN (SELECT id FROM Course_Details WHERE id BETWEEN 1 AND 5);
+
+			SELECT s.name , c.Course_name AS Course 
+			FROM Student_Details s JOIN Course_Details c 
+			ON s.Course = c.Id WHERE Course IN (SELECT Id FROM Course_Details 
+			WHERE Course_Name IN ("C" , "C++" , "C#"));
+			
+			SELECT s.name ,c.id, c.Course_name AS Course 
+			FROM Student_Details s JOIN Course_Details c 
+			ON s.Course = c.Id 
+			WHERE Course IN (SELECT id FROM Course_Details WHERE id BETWEEN 1 AND 5);
+
+********************************************************************************************************
+					
