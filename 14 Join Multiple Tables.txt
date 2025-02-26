@@ -1,0 +1,25 @@
+
+****************************	JOIN MULTIPLE TABLES	*******************************
+
+		SYNTAX	->
+				SELECT column(s)
+				FROM table1 joins table2
+				ON table1.column_name = table2.column_name
+				joins table3 
+				ON table1.column_name = table3.column_name;
+					
+************************************************************************************
+		SELECT *
+		FROM Student_Details INNER JOIN Course_Details
+		ON Student_Details.Course = Course_Details.Id
+		INNER JOIN Teacher_Details 
+		ON Student_Details.Teacher = Teacher_Details.T_Id;
+					
+		SELECT *
+		FROM Student_Details s LEFT JOIN Course_Details c
+		ON s.Course = c.Id
+		LEFT JOIN Teacher_Details t 
+		ON s.Teacher = t.T_Id;
+************************************************************************************
+					
+					
