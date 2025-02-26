@@ -1,0 +1,21 @@
+
+***************************	INNER JOIN	****************************
+
+- The INNER JOIN keyword selects records that have matching values in both table.
+	
+		SYNTAX	->
+				SELECT column(s)
+				FROM table_name1
+				INNER JOIN table_name2
+				ON table_name1.column = table_name2.column;
+				
+**************************************************************************************
+			
+		SELECT * FROM Employee_Details INNER JOIN Department
+		ON Employee_Details.Department = Department.D_Id;
+		
+		SELECT e.E_Id , e.Name , e.Age , e.Gender , d.DName 
+		FROM Employee_Details e INNER JOIN Department d
+		ON e.Department = d.D_Id;
+		
+**************************************************************************************
