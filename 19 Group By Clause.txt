@@ -1,0 +1,66 @@
+
+*************************	GROUP BY Clause	******************************
+
+	The GROUP BY is used in conjunction with the SELECT statement and AGGREGATE FUNCTION to group rows by common column values.
+	
+		SYNTAX	->
+				SELECT column(s)
+				FROM table_name
+				WHERE condition
+				GROUP BY column(s);
+				
+				SELECT column(s)
+				FROM table_name1
+				INNER JOIN table_name2
+				ON table_name1.column = table_name2.column
+				WHERE condition
+				GROUP BY column(s);
+				
+*********************************************************************************
+		SELECT course , count(course) 
+		FROM student_details 
+		GROUP BY course;
+				
+		SELECT c.id , c.Course_Name , COUNT(s.course) 
+		FROM student_details s INNER JOIN Course_Details c 
+		ON s.Course = c.Id GROUP BY s.course;
+				
+		SELECT c.id , c.Course_Name , COUNT(s.course) 
+		FROM student_details s INNER JOIN Course_Details c 
+		ON s.Course = c.Id where age >= 22 GROUP BY s.course;
+				
+		SELECT c.id , c.Course_Name , COUNT(s.course) 
+		FROM student_details s INNER JOIN Course_Details c 
+		ON s.Course = c.Id 
+		GROUP BY s.course 
+		ORDER BY COUNT(s.course);
+				
+		SELECT c.id , c.Course_Name , COUNT(s.course) 
+		FROM student_details s INNER JOIN Course_Details c 
+		ON s.Course = c.Id 
+		GROUP BY s.course 
+		ORDER BY COUNT(s.course)DESC;
+		
+***********************************************************************************
+	
+************************	HAVING Clause	  *********************************
+
+- The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+		
+		SYNTAX 	->
+				SELECT column(s)
+				FROM table_name
+				WHERE condition
+				GROUP BY column(s)
+				HAVING condition;
+	
+***************************************************************
+		
+	SELECT c.id , c.Course_Name , COUNT(s.course) AS Count 
+	FROM student_details s INNER JOIN Course_Details c 
+	ON s.Course = c.Id 
+	GROUP BY s.course 
+	HAVING COUNT(s.course) <2 
+	ORDER BY COUNT(s.course)DESC;
+
+***************************************************************
