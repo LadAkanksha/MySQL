@@ -1,0 +1,34 @@
+
+********************	IS NULL		********************
+
+	- IS NULL is used to access the data from database in which 
+		column value is NULL(EMPTY).
+	- We can't use other operator like BETWEEN,IN,AND,OR,NOT,ETC.
+
+		SYNTAX ->
+				SELECT col1,col2 , col3 ,... FROM table_name 
+				WHERE col_name IS NULL;
+				
+************************************************************************
+		SELECT * FROM Data WHERE name IS NULL;
+		SELECT * FROM Data WHERE AGE IS NULL;
+	
+************************************************************************
+
+
+	
+********************	IS NOT NULL	********************
+
+	- IS NOT NULL is used to access the data from database in which 
+		column value is NOT NULL(NOT EMPTY).
+	- We can't use other operator like BETWEEN,IN,AND,OR,NOT,ETC.
+
+		SYNTAX ->
+				SELECT col1,col2 , col3 ,... FROM table_name 
+				WHERE col_name IS NOT NULL;
+				
+************************************************************************
+		SELECT * FROM Data WHERE gender IS NOT NULL;
+		SELECT * FROM Data WHERE name IS NOT NULL ORDER BY name;
+	
+************************************************************************
