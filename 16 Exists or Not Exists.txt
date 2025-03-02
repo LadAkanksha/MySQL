@@ -1,0 +1,49 @@
+
+*********************************	EXISTS		*********************************
+
+	-	The EXISTS operator is used to test for the existence of any record in a subquery.
+	-	The EXISTS operator returns TRUE if the subquery returns one/more records.
+	-	If any single record exists then parent command show result.
+	-	Else no record exists then parent command can,t show result.
+	
+		SYNTAX 	->
+				SELECT column(s)
+				FROM table1
+				WHERE EXISTS (SELECT column(s) FROM table2 WHERE condition);
+						
+**********************************************************************************
+		
+	SELECT * FROM Student_Details 
+	WHERE EXISTS (SELECT id FROM Course_Details WHERE course_name = "Mysql");
+			
+	SELECT name FROM Student_Details 
+	WHERE EXISTS (SELECT id FROM Course_Details WHERE course_name = "Ruby");
+			
+	SELECT name FROM Student_Details 
+	WHERE EXISTS(SELECT id FROM Course_Details WHERE id IN (1,9));
+			
+**********************************************************************************
+						
+*********************************	NOT EXISTS	*********************************
+
+	-The NOT EXISTS operator is used if not any single record exists then parent command show result.
+	-If any single record exists then parent command can,t show result.
+	
+		SYNTAX 	->
+				SELECT column(s)
+				FROM table1
+				WHERE NOT EXISTS (SELECT column(s) FROM table2 WHERE condition);
+		
+*******************************************************************************************
+		
+		SELECT name FROM Student_Details 
+		WHERE NOT EXISTS (SELECT id FROM Course_Details WHERE id in (1,9));
+
+		SELECT * FROM Student_Details 
+		WHERE NOT EXISTS (SELECT id FROM Course_Details WHERE course_name = "Mysql");
+
+		SELECT name FROM Student_Details 
+		WHERE NOT EXISTS (SELECT id FROM Course_Details WHERE course_name = "Ruby");
+				
+*******************************************************************************************
+						
