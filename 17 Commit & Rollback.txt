@@ -1,0 +1,29 @@
+
+****************************	COMMIT & ROLLBACK	*******************************	
+
+	- COMMIT and ROLLBACK are two crucial Transaction Control Language(TCL) commands 
+	  that help maintain Data Integrity and Consistency.
+	- COMMIT ensures that all changes in a transaction are permanently saved.
+	- After executing a COMMIT statement,the changes are irreversible and database cannot
+           revert to its previous state.
+	- ROLLBACK provides a mechanism to undo changes when something goes wrong.
+	- ROLLBACK enesures that database return to its previous state by undoing uncommited changes.
+				
+	- (jr commit n deta rollback chi command use keli tr aadhichya sglya command revert hotat.)
+	-  these commands are only applicable for INSERT,UPDATE and DELETE.
+
+			SYNTAX	->
+					COMMIT;
+						
+					ROLLBACK;
+						
+*********************************************************************************************
+		SELECT * FROM DATA;
+		UPDATE DATA SET name = "Vidya" where id = 100;
+		UPDATE DATA SET city = "Ahmdabad" where id = 106;
+		SELECT * FROM DATA;
+		COMMIT;
+		UPDATE DATA SET age = 26 where id = 75;
+		ROLLBACK;
+		SELECT * FROM DATA;
+*********************************************************************************************
