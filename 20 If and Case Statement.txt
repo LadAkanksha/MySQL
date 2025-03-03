@@ -1,0 +1,52 @@
+
+*****************************	IF   *********************************
+
+	SYNTAX	->
+			SELECT column(s),
+			IF(condition,TRUE result , FALSE result) as Ailas_name
+			FROM table_name;
+				
+**********************************************************************
+	SELECT Id , Name , Age , Gender , City ,
+	IF(City <> "Dhule","Pass","Fail") AS Result 
+	FROM Student_Details;
+	
+	SELECT Id , Name , Age , Gender , City ,
+	IF(DOB between '2001-1-1' and '2003-12-30',"Brilliant","Excellent") AS Performance 
+	FROM Student_Details;
+
+**********************************************************************
+		
+*****************************	CASE clause	*********************************
+
+	SYNTAX	->
+			SELECT column(s),
+			CASE
+			WHEN condition1 THEN result1
+			WHEN condition2 THEN result2
+			WHEN condition3 THEN result3
+			ELSE result
+			END AS ailas_name
+			FROM table_name;
+				
+**********************************************************************
+		
+	SELLECT id , name , percentage,
+	CASE
+		WHEN percentage >= 80 AND percentage <= 100 THEN "A"
+		WHEN percentage >= 60 AND percentage < 80 THEN "B"
+		WHEN percentage >= 45 AND percentage < 60 THEN "C"
+		WHEN percentage >= 33 and percentage < 45 THEN "D"
+		WHEN percentage < 33 THEN "Fail"
+		ELSE "Incorrect Percenatge"
+	END AS Grade
+	FROM Student_Details;
+			
+	UPDATE Student_Details SET Percentage = (
+		CASE Id 
+			WHEN 3 THEN 50 
+			WHEN 5 THEN 34 
+			END)
+			WHERE Id IN(3,5);
+
+**********************************************************************
