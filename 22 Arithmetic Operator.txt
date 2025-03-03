@@ -1,0 +1,75 @@
+
+****************************	ARITHMETIC OPERATOR	*******************************
+
+	1)  ADDITION(+) 	  = The addition operator adds two no.together ,resulting in their sum.
+	2)  SUBTRACTION(-) 	  = The subtraction operator deducts one no. from another,giving the difference.
+	3)  Multiplication(*) 	  = The multiplication operator multiplies 2 no.,resultingin their product.
+	4)  Division(/)	  	  = The division operator divides one no.by another,providing the quotient.
+	5)  Modulo(%)	  	  = The modulus operator returns the remainder after dividing one no. by another.
+	
+****************************	NUMERIC FUNCTION    *******************************
+
+	1) 	ABS(number)		-	Return the absolute(positive) value of a number.
+	
+	2)	CEIL(number)		-	Return the smallest integer value that is greater than or equal to given number.
+	
+					-	Equal to the CEILING() function.
+						
+	3)	FLOOR(number)		-	Return the largest integer value that is less than or equal to given number.
+	
+	4)	POW(base,exponent)	-	Return the value of a number raised to the power of another number.
+					-	Equal to the POWER() function.
+	
+	5)	PI()			-	Return the value of PI.
+							
+	6)	RAND()			-	Return a random decimal number between 0(inclusive) and 1(exclusive).
+
+	7)	ROUND(number,decimals)	-	Rounds a number to a specified number of decimal places.
+	
+	8)	SIGN(number)		-	Return the sign of a number.	If number > 0 , it returns 1
+										If number = 0 , it returns 0
+										If number < 0 , it returns -1
+															
+	9)	SQRT(number) 		-	Returns the square root of a number.
+	
+***************************************************************************
+		SELECT ABS(-125.45) AS Absolute;
+		SELECT ABS(45.6) AS Absolute;
+		SELECT ABS(-45.6) AS Absolute;
+		
+		SELECT CEIL(45.6) AS Ceil;
+		SELECT CEIL(45.1) AS Ceil;
+		SELECT CEIL(3547.987) AS Ceil;
+		SELECT CEIL(-45.6) AS Ceil;
+		
+		SELECT FLOOR(45.25) AS Floor;
+		SELECT FLOOR(-45.25) AS Floor;
+		SELECT FLOOR(-45.97) AS Floor;
+		SELECT FLOOR(3547.99) AS Floor;
+	
+		SELECT POW(4,2) AS Power;
+		SELECT POW(16,3) AS Power;
+		SELECT POWER(2.2,2) AS Power;
+		SELECT POWER(4,2) AS Power;
+	
+		SELECT PI() AS PI;
+	
+		SELECT RAND() AS "Random Value";
+		SELECT RAND() * 100 AS "Random Value";
+		SELECT FLOOR(RAND() *100) AS "Random Value";
+		SELECT FLOOR(1 + RAND() *100) AS "Random Value";
+	
+		SELECT ROUND(452.20) AS "ROUND VALUE";
+		SELECT ROUND(452.50) AS "ROUND VALUE";
+		SELECT ROUND(452.70) AS "ROUND VALUE";
+	
+		SELECT SIGN(235) AS "CHANGE";
+		SELECT SIGN(0) AS "CHANGE";
+		SELECT SIGN(-235) AS "CHANGE";
+	
+		SELECT SQRT(16);
+		SELECT SQRT(22.5);
+		SELECT ROUND(SQRT(22.5),2);
+		SELECT SQRT(9);
+**************************************************************************
+	
