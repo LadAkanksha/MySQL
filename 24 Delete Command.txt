@@ -1,0 +1,19 @@
+
+****************************	Delete Command	*******************************	
+
+	SYNTAX ->
+			DELETE FROM table_Name
+			WHERE condition;
+				OR
+			DELETE FROM table_Name;
+		
+		
+- If we not use where clause with DELETE command,then all data will be deleted from the database.
+
+
+*********************************************************************
+			DELETE FROM data WHERE id = 56;
+			DELETE FROM data WHERE gender = "F";
+			DELETE FROM data;
+*********************************************************************
+		
