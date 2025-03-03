@@ -1,0 +1,22 @@
+
+********************	Update Command	*************************
+*								*
+*	SYNTAX ->						*
+*			UPDATE table_name			*
+*			SET col1 = 	val1 , col2= val2,....	*
+*			WHERE condition;			*
+*								*
+*****************************************************************	
+			
+			
+	- Used to update the table data in columns.
+	
+******************************************************************
+	UPDATE Data SET gender = "M" WHERE id = 125;
+	UPDATE Data SET name = "Tashi" WHERE id = 210;
+	UPDATE Data SET name = "Ruchi", gender = "F" WHERE id = 210;
+	UPDATE Data SET gender = "F" WHERE id = 225;
+	UPDATE Data SET city="Chiplun" WHERE id IN(103,104);
+******************************************************************
+
+			
