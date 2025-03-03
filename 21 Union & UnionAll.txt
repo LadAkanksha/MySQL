@@ -1,0 +1,121 @@
+
+******************************	UNION 	******************************
+
+	- The UNION operator is used to combine the result set of two or more SELECT statements.
+	- The UNION operator selects only distinct values by default.
+	
+	RULE-
+		1) Each SELECT statement within UNION must have the same no.of columns.
+		2) The columns must also have similar data types.
+		3) The columns in each SELECT statement must also be in the same order.
+		
+	SYNTAX	->
+			SELECT column1,column2... FROM table1
+			UNION
+			SELECT column1,column2... FROM table2;
+				
+				
+*****************************************************************************************************************
+			SELECT Id , Name , Course FROM Student_Details 
+			UNION SELECT Id , Name , Course 
+			FROM Teacher_Details;
+					
+			SELECT Id , Name , Course FROM Student_Details 
+			WHERE Gender = 'M' 
+			UNION 
+			SELECT Id , Name , Course FROM Teacher_Details 
+			WHERE Gender = 'M';
+					
+			SELECT Id , Name , Course FROM Student_Details 
+			WHERE City = "Nashik" 
+			UNION 
+			SELECT Id , Name , Course FROM Teacher_Details 
+			WHERE City = "Nashik";
+					
+			SELECT Id , Name , City ,Course FROM Student_Details  
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION 
+			SELECT Id , Name ,City, Course FROM Teacher_Details 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP");
+					
+			SELECT s.Id , s.Name , s.City , c1.Course_Name as Course 
+			FROM Student_Details s INNER JOIN Course_Details c1 
+			ON s.Course = c1.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION SELECT t.Id , t.Name ,t.City, c2.Course_Name as Course 
+			FROM Teacher_Details t INNER JOIN Course_Details c2 
+			ON t.Course = c2.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP");
+			
+			SELECT s.Id , s.Name , s.City , c1.Course_Name as Course 
+			FROM Student_Details s INNER JOIN Course_Details c1 
+			ON s.Course = c1.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION 
+			SELECT t.Id , t.Name ,t.City, c2.Course_Name as Course 
+			FROM Teacher_Details t INNER JOIN Course_Details c2 
+			ON t.Course = c2.Id 
+			WHERE Course IN (SELECT Id FROM Course_Details WHERE Course_Name IN ("CPP","C#"));
+
+*****************************************************************************************************************	
+				
+******************************		UNION ALL	******************************
+
+	- 	The UNION ALL operator is used to combine the result set of two or more SELECT statements.
+	-	The UNION ALL operator selects all(duplicate) values.
+	
+	RULE-
+		1) Each SELECT statement within UNION ALL must have the same no.of columns.
+		2) The columns must also have similar data types.
+		3) The columns in each SELECT statement must also be in the same order.
+		
+	SYNTAX	->
+			SELECT column1,column2... FROM table1
+			UNIONALL
+			SELECT column1,column2... FROM table2;
+				
+*****************************************************************************************************************
+	
+			SELECT Id , Name , Course FROM Student_Details 
+			UNION ALL SELECT Id , Name , Course 
+			FROM Teacher_Details;
+			
+			SELECT Id , Name , Course FROM Student_Details 
+			WHERE Gender = 'M' 
+			UNION ALL
+			SELECT Id , Name , Course FROM Teacher_Details 
+			WHERE Gender = 'M';
+			
+			SELECT Id , Name , Course FROM Student_Details 
+			WHERE City = "Nashik" 
+			UNION ALL
+			SELECT Id , Name , Course FROM Teacher_Details 
+			WHERE City = "Nashik";
+			
+			SELECT Id , Name , City ,Course FROM Student_Details  
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION ALL
+			SELECT Id , Name ,City, Course FROM Teacher_Details 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP");
+			
+			SELECT s.Id , s.Name , s.City , c1.Course_Name as Course 
+			FROM Student_Details s INNER JOIN Course_Details c1 
+			ON s.Course = c1.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION ALL 
+			SELECT t.Id , t.Name ,t.City, c2.Course_Name as Course 
+			FROM Teacher_Details t INNER JOIN Course_Details c2 
+			ON t.Course = c2.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP");
+			
+			SELECT s.Id , s.Name , s.City , c1.Course_Name as Course 
+			FROM Student_Details s INNER JOIN Course_Details c1 
+			ON s.Course = c1.Id 
+			WHERE Course = (SELECT Id FROM Course_Details WHERE Course_Name = "CPP") 
+			UNION ALL
+			SELECT t.Id , t.Name ,t.City, c2.Course_Name as Course 
+			FROM Teacher_Details t INNER JOIN Course_Details c2 
+			ON t.Course = c2.Id 
+			WHERE Course IN (SELECT Id FROM Course_Details WHERE Course_Name IN ("CPP","C#"));
+
+	*************************************************************************************************
