@@ -1,0 +1,98 @@
+
+***********************		STRING FUNCTION		**************************
+
+	1)	UPPER()/UCASE(str)	- Converts a string to Upper Case.
+	2)	LOWER()/LCASE(str)	- Converts a string to Lower Case 
+	3)	LENGTH(str)		-	Returns the length of a string(in byte).
+	4)	CHAR_LENGTH()/CHARACTER_LENGTH(str)	- Returnsthe length of a string (in characters)
+	5)	CONCAT(str1,str2,,...)			- Adds two or more expression together.
+	6)	CONCAT_WS(separator , str1, str2 ,...)	- Adds two or more expression with a separator
+	7)	LTRIM(str)	- 	Removes leading(starting) spaces from a string.	
+	8)	RTRIM()		-	Removes trailing(ending) spaces from a string.
+	9)	TRIM()		-	Removes leading(start) and Trailing(end) spaces from a string.
+	10)	POSITION()	-	Returns the position of first occurence of a substring in a string.
+	11)	LOCATE()	-	Returns the position of first occurence of a substring in a string.
+	12)	INSTR()		-	Returns the position of first occurence of a string in a another string.
+	
+************************************************************************************************************************
+			SELECT Id , Name , UPPER(Name) as "UPPPER FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , UCASE(Name) as "UCASE FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , LOWER(Name) as "LOWER FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , LCASE(Name) as "LCASE FUNCTION" FROM Teacher_Details;
+			SELECT DISTINCT(UCASE(City)) FROM Teacher_Details;
+			SELECT DISTINCT(LOWER(City)) FROM Teacher_Details;
+			SELECT Id , Name , LENGTH(Name) as "LENGTH FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , LENGTH(Id) as "LCASE FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , CHAR_LENGTH(NAME) as "CHAR LENGTH FUNCTION" ,CHAR_LENGTH(Id) AS "Id LENGTH"
+				FROM Teacher_Details;
+			SELECT Id , Name , CHARACTER_LENGTH(NAME) as "LENGTH FUNCTION" ,CHARACTER_LENGTH(Id) AS "Id LENGTH"
+				FROM Teacher_Details;
+			SELECT Id , Name , CONCAT(NAME,LENGTH(Name)) as "CONCAT FUNCTION" FROM Teacher_Details;
+			SELECT Id , Name , CONCAT(NAME," - ",City) as "CONCAT FUNCTION" FROM Teacher_Details;
+			SELECT CONCAT_WS(",","AKANKSHA","ATHARV","APEKSHA","VIDYA") as "CONCAT_WS FUNCTION";
+			SELECT CONCAT_WS(".My ","WORLD","MOM","DAD","PASSION") as "CONCAT_WS FUNCTION";
+			SELECT LTRIM("     I LOVE PET.  ") as "LTRIM FUNCTION";
+			SELECT RTRIM("I LOVE INDIA.    ") as "RTRIM FUNCTION";
+			SELECT TRIM("     I LOVE SQL.    ") as "TRIM FUNCTION";
+			SELECT POSITION("LAD" IN "Akanksha Lad")as "POSITION FUNCTION";
+			SELECT BINARY POSITION("LAD" IN "Akanksha Lad")as "POSITION FUNCTION";
+			SELECT INSTR("Akanksha Lad Chandrakant Lad","kant")as "INSTR FUNCTION";
+			SELECT LOCATE("LAD" , "Akanksha Lad Chandrakant Lad")as "LOCATE FUNCTION";
+			SELECT  LOCATE("LaD" , "Akanksha Lad Chandrakant Lad" , 10) as "LOCATE FUNCTION";
+			SELECT LOCATE("LE" , "I LIKE LEMON")as "LOCATE FUNCTION";
+
+************************************************************************************************************************
+	13)	SUBSTRING(string,index(incl),length)/SUBSTR()	-	Extracts a substring from a string(starting at any position).
+	14)	MID()						-	Extracts a substring from a string
+	15)	SUBSTRING_INDEX(string,delimiter,occurence_no)	-	Returns a substring of a string before a specified number of delimiter occurs.
+	16)	LEFT(string,index(incl.))	-	Extracts no. of characters from a string(starting from left).
+	17)	RIGHT(string,index(incl.))	-	Extracts no. of characters from a string(starting from right).
+	18)	LPAD(string,length,another_str)	-	Left-pads a string with another string ,to a certain length.
+	19)	RPAD(string,length,another_str)	-	right-pads a string with another string ,to a certain length.
+	20)	SPACE(length)	-	Returns a string of the specified no.of space character.
+	21)	REVERSE(string)	-	Reverses a string and returns the result.
+	22)	REPEAT()	-	Repeats a string as many times as specified.
+	23)	REPLACE()	-	Replaces all occurences of a substring within a string,with a new substring.
+	24)	STRCMP()	-	Compares two strings.				
+								If str1 > str2 , it returns 1
+								If str1 = str2 , it returns 0
+								If str1 < str2 , it returns -1
+
+	25)	FIELD(search_str ,str1,str2,...)-	Returns the index position of a value in a list of values.
+	26)	FIND_IN_SET(search_str,str)	-	Returns the position of a string within a list of strings.
+	27)	FORMAT(value,decimals)		-	Format a number to a format like "$,##,###.##",rounded to specified number of decimal places.
+	28)	HEX(str)			-	
+	
+************************************************************************************************************************
+			SELECT SUBSTRING("Atharv Chandrakant Lad",6)as "SUBSTRING FUNCTION";
+			SELECT SUBSTRING("Atharv Chandrakant Lad",8,11)as "SUBSTRING FUNCTION";
+			SELECT SUBSTR("Atharv Chandrakant Lad",20,4)as "SUBSTR FUNCTION";
+			SELECT MID("Atharv Chandrakant Lad",2,17)as "MID FUNCTION";
+			SELECT SUBSTRING_INDEX("Atharv Chandrakant Lad"," ",1)as "SUBSTRING_INDEX FUNCTION";
+			SELECT SUBSTRING_INDEX("Atharv Chandrakant Lad"," ",2)as "SUBSTRING_INDEX FUNCTION";
+			SELECT SUBSTRING_INDEX("Atharv Chandrakant Lad","R",2)as "SUBSTRING_INDEX FUNCTION";
+			SELECT SUBSTRING_INDEX("Atharv Chandrakant Lad","r",1)as "SUBSTRING_INDEX FUNCTION";
+			SELECT LEFT("Atharv Chandrakant Lad",10)as "LEFT FUNCTION";
+			SELECT RIGHT("Atharv Chandrakant Lad",10)as "RIGHT FUNCTION";
+			SELECT LPAD("CONGRATULATIONS",30," ")as "LAPD FUNCTION";
+			SELECT RPAD("CONGRATULATIONS",25,"-")as "RPAD FUNCTION";
+			SELECT SPACE(100)as "SPACE FUNCTION";
+			SELECT REVERSE("I LOVE INDIA")as "REVERSE FUNCTION";
+			SELECT REPEAT("Woo",3)as "REPEAT FUNCTION";
+			SELECT REPLACE("I LOVE MySQL","My","Pl")as "REPLACE FUNCTION";
+			SELECT STRCMP("APNA COLLEGE","Apna College")as "STRCMP FUNCTION";
+			SELECT STRCMP("APNA COLLEGE CHANNEL","College")as "STRCMP FUNCTION";
+			SELECT STRCMP("APNA","Apna College")as "STRCMP FUNCTION";
+			SELECT FIELD('A','B','A','C')as "FIELD FUNCTION";
+			SELECT FIELD("NIKU","ATHARV","APEKSHA","AAKU","NIKU")as "FIELD FUNCTION";
+			SELECT FIELD(10,1,2,5,6,7,10)as "FIELD FUNCTION";
+			SELECT FIND_IN_SET(10,"1,2,5,6,7,10")as "FIND_IN_SET FUNCTION";
+			SELECT FIND_IN_SET("A","A,B,C,D,E")as "FIND_IN_SET FUNCTION";
+			SELECT FIND_IN_SET("NIKU","PRATIKSHA,APEKSHA,SAYLI,NIKU,SUPRIYA")as "FIND_IN_SET FUNCTION";
+			SELECT FORMAT(456.258746,2)as "FORMAT FUNCTION";
+			SELECT FORMAT(456.258746,8)as "FORMAT FUNCTION";
+			SELECT HEX("A")as "HEX FUNCTION";
+			SELECT HEX("AKANKSHA")as "HEX FUNCTION";
+			SELECT HEX("NIKU")as "HEX FUNCTION";
+
+************************************************************************************************************************
