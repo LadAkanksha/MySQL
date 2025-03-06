@@ -1,0 +1,46 @@
+
+***************************************	STUDENT_DETAILS TABLE CREATION	***********************************************
+
+SELECT * FROM mydb.student_details;
+SELECT * FROM Course_Details;
+use mydb;
+create table Student_Details
+(	Id int Primary key not null auto_increment, 
+	Name varchar(50) not null,
+    age int not null ,  
+	Gender char not null,
+    DOB date not null ,  
+    Mobile_No numeric(10,0) not null, 
+    City varchar(20) not null , 
+    Course int not null
+);
+alter table Student_Details auto_increment = 1001;
+
+create table Course_Details
+(	Id int Primary key not null auto_increment ,
+	Course_Name varchar(20) not null
+);
+alter table Student_Details add foreign key(Course) references Course_Details(Id);
+
+insert into Course_Details(Course_Name)
+values("C"),("CPP"),("JAVA"),("C#"),("ASP.NET"),("PYTHON"),("JAVASCRIPT"),("DJANGO"),("MYSQL");
+
+insert into Student_Details(Name,Age,Gender,DOB,Mobile_No,City,Course)
+values("Ramakant Nikam",22,'M','2003-12-31',8596526354,"Solapur",4),
+      ("Prajkta Mali",23,'F','2002-1-3',8485768584,"Dhule",1),
+      ("Sonu Chavan",21,'M','2004-8-25',9685958675,"Panvel",2),
+      ("Muskan shekh",22,'F','2003-9-3',9251425362,"Pune",5),
+      ("Ravi Kumar",23,'M','2002-11-01',9563258756,"Pune",5),
+      ("Ujjwala Lodhe",25,'F','2000-10-15',8592635445,"Nashik",6),
+      ("Prakash more",23,'M','2002-6-23',9291526354,"Sangli",4);
+      
+SELECT *from student_details s INNER JOIN Course_Details c ON s.Course = c.Id;
+SELECT s.Name , c.Course_Name from student_details s INNER JOIN Course_Details c ON s.Course = c.Id;
+SELECT * from student_details s LEFT JOIN Course_Details c ON s.Course = c.Id;
+SELECT S.NAME , s.Age , s.Gender , s.City , c.Course_Name  from student_details s LEFT JOIN Course_Details c ON s.Course = c.Id;
+
+SELECT * FROM student_details s RIGHT JOIN Course_Details c ON s.Course = c.Id;
+			
+SELECT S.NAME , s.Age , s.Gender , s.City , c.Course_Name  
+FROM student_details s RIGHT JOIN Course_Details c 
+ON s.Course = c.Id;
