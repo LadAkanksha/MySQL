@@ -1,0 +1,56 @@
+
+****************************	DATE Function	************************************
+
+		1)	CURDATE/CURRENT_DATE/SYSDATE	-	Return current date.
+			NOW				-	Return current date & time.
+		2)	LAST_DAY	-	Extract the last day of the month for given date.
+		3)	DAY(date)	-	Returns  the date of the month for a date(1-31).
+		4)	DAYNAME(date)	-	Returns weekday name for a date.
+		5)	DAYOFMONTH(date)-	Returns day of the month for a date.
+		6)	DAYOFWEEK(date)	-	Returns weekday index for a date(1-7).
+		7)	DAYOFYEAR(date)	-	Returns day of the year for a date(1-366).
+		8)	WEEK(date)	-	Returns the week number for a date(0-53);
+		9)	WEEKDAY(date)	-   	Return the weekday number for a date.	
+		10)	YEAR(date)	-	Return the year paart of a date.
+		11)	YEARWEEK(date)	- 	Return the year and week no. for a date.	
+		12)	EXTRACT(part FROM date)	-Extract the month from a date.
+
+				i) 	MICROSECOND	-	
+				ii) 	SECOND	-	
+				iii)	MINUTE	-
+				iv)	HOUR -	
+				v)	DAY	-
+				vi)	MONTH	-
+				vii)	QUARTER	-	
+				viii)	YEAR	-
+				ix)	SECOND_MICROSECOND	-
+				x)	MINUTE_MICROSECOND	-
+				xi)	MINUTE_SECOND	-	
+				xii) 	HOUR_MICROSECOND	-	
+				xiii)	HOUR_SECOND	-	
+				xiv)	HOUR_MINUTE	-
+				xv)	DAY_MICROSECOND	-	
+				xvi)	DAY_SECOND	-
+				xvii)	DAY_MINUTE	-
+				xviii)	DAY_HOUR	-
+				xix)	YEAR_MONTH	-	
+ 
+		13)	DATE_ADD() - Adds a date interval to a date and then returns the date.
+		14)	ADDDATE(date,INTERVAL value addunit)/(date,days)- Adds a time/date interval to a date then return date.
+		15)	MAKEDATE(year,day)				- Create & return a date based on year &no. of days value/
+		16)	DATE_SUB(date,INTERVAL value inteval)		- Substracts a date interval from a date and then returns the date.
+		17)	SUBDATE(date,INTERVAL value unit)/(date,days)	- Substracts a date interval from a date then returns the date.	
+		18)	DATEDIFF(date1,date2)		-	Returns the no.of days between two date values.
+		19)	TO_DAYS(date)			-	Return the number of days between the date and year 0.
+		20)	FROM_DAYS(number)		-	Return a date from a numeric representation of the day.
+		21)	PERIOD_ADD(period,number)	-	Adds a specified no.of months to a period.
+		22)	PERIOD_DIFF(period1,period2)	-	Returns a the difference between two periods.
+		23)	DATE_FORMAT(date,format)	-	Formats a date as specified.
+		24)	STR_TO_DATE(string,format)	-	Returns a date based on a string & format.
+		25)	QUARTER() 			- 	Return the quarter of the year for the date(1-4).
+
+								Jan - March	->	1
+								Apr - June	->	2
+								July - Sep	->	3
+								Oct - Dec	->	4
+
